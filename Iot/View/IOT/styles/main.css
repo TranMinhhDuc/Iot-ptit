@@ -1,0 +1,162 @@
+*   {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+
+i{
+    background-color: white;
+}
+
+.btn-group{
+    border: 1px solid dark;
+}
+header{
+    padding: 25px 20px 20px 70px;
+    text-align: center;
+}
+
+#logo{
+    font-size: 20px;
+    font-weight: bold;
+    font: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#menu {
+    text-align: center;
+}
+#menu ul{
+    gap: 50px;
+    background-color: white;
+}
+#menu ul li {
+    background-color: white;
+}
+#menu a {
+   background-color: white; 
+}
+
+.justify-content-center{
+    gap: 70px;
+}
+.current-measurement-card {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.5rem;
+}
+.current-measurement-card div {
+    background-color: white;
+}
+.current-measurement-card span {
+    background-color: white;
+}
+
+.measurement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.measurement i {
+    font-size: 2.5rem; 
+    margin-right: 8px;
+    color: #333; 
+}
+
+.measurement-value {
+    font-weight: bold;
+    color: #333;
+    font-size: 2.5rem;
+}
+
+.unit {
+    font-size: 1.5rem;
+    margin-left: 5px; 
+    color: #666;
+}
+
+.measurement-label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+#current-measurements {
+    padding-top: 50px;
+}
+
+#measurementChart{
+    background-color: white;
+}
+
+.controller{
+    text-align: center;
+}
+.buldOn, .buldOff, .fanOn, .fanOff, .airOn, .airOff {
+    border: 2px solid black;
+}
+.buldOn.active {
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+}
+
+.buldOff.active {
+    background-color: red;
+    border: 2px solid black;
+    color: white;
+}
+.controller i {
+    font-size: 2rem;
+}
+
+.fanOn.active{
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+}
+.fanOff.active{
+    background-color: red;
+    border: 2px solid black;
+    color: white;
+}
+.spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.airOn.active{
+    background-color: green;
+    border: 2px solid black;
+    color: white;
+}
+.airOff.active{
+    background-color: red;
+    border: 2px solid black;
+    color: white;
+}

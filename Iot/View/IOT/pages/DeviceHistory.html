@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Template</title>
+    <link rel="stylesheet" href="/styles/DeviceHistory.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="container-fluid bg-white">
+        <div class="row">
+            <div class="col-sm-3 bg-white" id="logo">
+                Smart Home
+            </div>
+            <div class="col-sm-9 bg-white" id="menu">
+                <ul>
+                    <li><a href="/pages/dashboard.html">DashBoard</a></li>
+                    <li><a href="/pages/profile.html">Profile</a></li>
+                    <li><a href="/pages/measurehistory.html">Lịch sử đo</a></li>
+                    <li><a href="/pages/DeviceHistory.html">Lịch sử điểu khiển</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <h1>Device History</h1>
+    <div class="container px-4">
+        <div class="row g-3 align-items-end mb-4">
+            <div class="col-md-4">
+                <label for="searchBy" class="form-label">Search By:</label>
+                <select id="searchBy" class="form-select">
+                    <option value="deviceName">Device Name</option>
+                    <option value="date">Action Date</option>
+                </select>
+            </div>
+            <!-- Input cho Device Name -->
+            <div class="col-md-6" id="deviceNameSearch">
+                <label for="searchInput" class="form-label">Device Name:</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                    <input type="text" id="searchName" class="form-control" placeholder="Enter device name...">
+                </div>
+            </div>
+    
+            <!-- Input cho Action Date (Cập nhật lại input ngày) -->
+            <div class="col-md-6 d-none" id="dateSearch">
+                <label class="form-label">Action Date:</label>
+                <div class="row g-2">
+                    <div class="col">
+                        <input type="text" id="searchDate" class="form-control" placeholder="date">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="searchTime" class="form-control" placeholder="Time">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-2">
+                <button id="searchBtn" class="btn btn-primary w-100">
+                    <i class="bi bi-funnel-fill"></i> Search
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container px-4">
+        <div class="row g-3 align-items-end mb-4">
+            <div class="col-md-4">
+                <label for="sortBy" class="form-label">Sort By:</label>
+                <select id="sortBy" class="form-select">
+                    <option value="actionTime">Time</option>
+                    <option value="actionDate">Date</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="sortValue" class="form-label">Sort Value:</label>
+                <select id="sortValue" class="form-select">
+                    <option value="asc">Tăng dần</option>
+                    <option value="desc">Giảm dần</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <button id="sortBtn" class="btn btn-primary w-100">
+                    <i class="bi bi-funnel-fill"></i> Sort
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="table-container" style="margin-top: 3% ;">
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Device Name</th>
+                    <th>Action</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- Rows will be inserted dynamically -->
+            </tbody>
+        </table>
+        <div class="pagination-container">
+            <button id="prev-page" class="pagination-button" disabled>Previous</button>
+            <span id="pagination-info">Page 1 of 1</span>
+            <button id="next-page" class="pagination-button" disabled>Next</button>
+        </div>
+        
+        <div id="pageSize" style="text-align: center;">
+            Page Size:
+            <select id="size">
+                <option value="10">10</option>
+                <option value="5">5</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+        </div>
+    </div>
+    <script src="/js/DeviceHistory.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.js"></script>
+</body>
+</html>

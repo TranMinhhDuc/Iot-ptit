@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="container-fluid bg-white">
+        <div class="row">
+            <div class="col-sm-3 bg-white" id="logo">
+                Smart Home
+            </div>
+            <div class="col-sm-9 bg-white" id="menu">
+                <ul>
+                    <li><a href="/pages/dashboard.html">DashBoard</a></li>
+                    <li><a href="/pages/profile.html">Profile</a></li>
+                    <li><a href="/pages/measurehistory.html">Lịch sử đo</a></li>
+                    <li><a href="/pages/controlhistory.html">Lịch sử điểu khiển</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container-fluid p-5" id="current-measurements">
+        <div class="row justify-content-center">
+
+            <div class="col-sm-3 current-measurement-card">
+                <div class="measurement">
+                    <i class="fas fa-thermometer-full" id="temperature-icon"></i>
+                    <span class="measurement-value" id="temperature-value"></span><span class="unit">℃</span>
+                </div>
+                <div class="measurement-label">Nhiệt độ</div>
+            </div>
+
+            <div class="col-sm-3 current-measurement-card">
+                <div class="measurement">
+                    <i class="fas fa-tint" id="humidity-icon"></i>
+                    <span class="measurement-value" id="humidity-value"></span><span class="unit">%</span>
+                </div>
+                <div class="measurement-label">Độ ẩm</div>
+            </div>
+
+            <div class="col-sm-3 current-measurement-card">
+                <div class="measurement">
+                    <i class="far fa-lightbulb" id="brightness-icon"></i>
+                    <span class="measurement-value" id="brightness-value"></span><span class="unit">lux</span>
+                </div>
+                <div class="measurement-label">Độ sáng</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <canvas id="measurementChart" style="width:100%;max-width:100%"></canvas>
+            </div>
+            <div class="col-sm-4 bg-white controller">
+                <div style="background-color: white; font-weight: bold; font-size: 20px; padding: 20px">
+                    Điều Khiển
+                </div>
+                <div class="buld-control bg-white my-5">
+                    <i class="far fa-lightbulb" id="buldIcon" style="margin-right: 10%;"></i>
+                    <span>
+                        <div class="btn-group ">
+                            <button class="btn buldOn">On</button>
+                            <button class="btn buldOff">Off</button>
+                        </div>
+                    </span>
+                </div>
+                <div class="fan-control bg-white my-5">
+                    <i class="fas fa-fan" id="fanIcon" style="margin-right: 10%;"></i>
+                    <span>
+                        <div class="btn-group ">
+                            <button class="btn fanOn">On</button>
+                            <button class="btn fanOff">Off</button>
+                        </div>
+                    </span>
+                </div>
+                <div class="air-control bg-white">
+                    <i class="fas fa-snowflake" id="airIcon" style="margin-right: 10%;"></i>
+                    <span>
+                        <div class="btn-group ">
+                            <button class="btn airOn">On</button>
+                            <button class="btn airOff">Off</button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="module" src="/js/dashboard.js"></script>
+
